@@ -12,6 +12,6 @@ public class ObstacleController
 	
 	// Update is called once per frame
 	void Update () {
-		transform.position = transform.position + Vector3.left * 0.1f;
+		transform.position = transform.position + Vector3.left * Time.deltaTime * 5.0f;
 	}
 }
