@@ -5,18 +5,19 @@ using UnityEngine.SceneManagement;
 
 public class MainMenuButtons : MonoBehaviour {
 	public void OnStartButtonBlick() {
-		SceneManager.LoadScene ("game");
+		SceneManager.LoadScene ("Game");
 	}
 
 	public void OnQuitButtonClick() {
-#if UNITY_EDITOR
-		UnityEditor.EditorApplication.isPlaying = false;
-#else
-		Application.Quit ();
-#endif
+		GameState.QuitApp ();
 	}
 
 	public void OnQuitGameButtonClick() {
+		GameState.Quit ();
 		SceneManager.LoadScene ("MainMenu");
+	}
+
+	public void OnPauseButtonClick() 	{
+		GameState.PauseResume ();
 	}
 }
